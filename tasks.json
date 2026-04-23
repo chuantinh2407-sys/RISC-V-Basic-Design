@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run_Selected_Files",
+            "type": "shell",
+            // Chỉ định chính xác tên các file bạn muốn biên dịch cùng nhau
+            "command": "iverilog -g2012 -o MUX/simulation.out MUX/mux.sv MUX/mux_tb.sv; vvp MUX/simulation.out; gtkwave MUX/waves.vcd",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
